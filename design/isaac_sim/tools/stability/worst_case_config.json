@@ -1,0 +1,68 @@
+{
+  "support_polygon": {
+    "half_width_m": 0.275,
+    "half_length_m": 0.225
+  },
+  "requirements": {
+    "max_operating_tilt_deg": 15.0,
+    "tilt_margin_deg_min": 5.0,
+    "max_expected_lateral_acc_g": 0.35,
+    "dynamic_margin_factor": 1.2
+  },
+  "mass_items": [
+    {
+      "name": "base",
+      "mass_kg": 35.0,
+      "x_m": 0.0,
+      "y_m": 0.0,
+      "z_m": 0.08
+    },
+    {
+      "name": "wheels",
+      "mass_kg": 4.0,
+      "x_m": 0.0,
+      "y_m": 0.0,
+      "z_m": 0.10
+    },
+    {
+      "name": "lift_stage_high",
+      "mass_kg": 10.0,
+      "x_m": 0.0,
+      "y_m": 0.0,
+      "z_m": 0.62
+    },
+    {
+      "name": "stewart_stack_tilted",
+      "mass_kg": 14.0,
+      "x_m": 0.05,
+      "y_m": 0.0,
+      "z_m": 0.78
+    },
+    {
+      "name": "left_arm_front",
+      "mass_kg": 4.5,
+      "x_m": 0.22,
+      "y_m": 0.133,
+      "z_m": 0.92
+    },
+    {
+      "name": "right_arm_retract",
+      "mass_kg": 4.5,
+      "x_m": 0.06,
+      "y_m": -0.133,
+      "z_m": 0.80
+    },
+    {
+      "name": "payload_peak_one_arm",
+      "mass_kg": 5.0,
+      "x_m": 0.40,
+      "y_m": 0.10,
+      "z_m": 0.95
+    }
+  ],
+  "turn_radius_candidates_m": [
+    0.4,
+    0.6,
+    1.0
+  ]
+}
