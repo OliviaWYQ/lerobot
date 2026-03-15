@@ -3,9 +3,14 @@ import numpy as np
 from typing import List, Union, Tuple
 
 from lerobot.robots.robot import Robot
-# from lerobot.robots.so101_follower.config_so101_follower import SO101FollowerConfig
-from lerobot.robots.so_follower.so101_follower.config_so101_follower import SO101FollowerConfig
-from lerobot.robots.utils import make_robot_from_config
+
+# Some custom repos may not include so_follower sources; keep kinematics usable.
+try:
+    from lerobot.robots.so_follower.so101_follower.config_so101_follower import SO101FollowerConfig
+    from lerobot.robots.utils import make_robot_from_config
+except Exception:  # pragma: no cover
+    SO101FollowerConfig = None
+    make_robot_from_config = None
 import numpy as np
 from lerobot.cameras.realsense.configuration_realsense import RealSenseCameraConfig
 from lerobot.cameras import ColorMode, Cv2Rotation
@@ -13,6 +18,8 @@ from lerobot.cameras.opencv.configuration_opencv import OpenCVCameraConfig
 
 def create_real_robot(port, camera_index, uid: str = "so101") -> Robot:
     """Wrapper function to map string UIDS to real robot configurations. Primarily for saving a bit of code for users when they fork the repository. They can just edit the camera, id etc. settings in this one file."""
+    if SO101FollowerConfig is None or make_robot_from_config is None:
+        raise ImportError("SO101 follower modules are missing in this repo snapshot")
     if uid == "so101":
         robot_config = SO101FollowerConfig(
             port= port,
