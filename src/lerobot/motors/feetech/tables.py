@@ -241,6 +241,7 @@ SCAN_BAUDRATES = [
 
 MODEL_NUMBER_TABLE = {
     "sts3215": 777,
+    "sts3215_v2": 778,  # Alternate model number for sts3215
     "sts3250": 2825,
     "sm8512bl": 11272,
     "scs0009": 1284,
@@ -251,6 +252,7 @@ MODEL_PROTOCOL = {
     "sms_series": 0,
     "scs_series": 1,
     "sts3215": 0,
+    "sts3215_v2": 0,
     "sts3250": 0,
     "sm8512bl": 0,
     "scs0009": 1,

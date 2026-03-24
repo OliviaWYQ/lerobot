@@ -48,7 +48,7 @@ class SOFollowerConfig(RobotConfig):
 @RobotConfig.register_subclass("so101_follower")
 @RobotConfig.register_subclass("so100_follower")
 @dataclass
-class SOFollowerRobotConfig(RobotConfig, SOFollowerConfig):
+class SOFollowerRobotConfig(SOFollowerConfig):
     pass
 
 

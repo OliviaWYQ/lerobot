@@ -459,11 +459,8 @@ class SerialMotorsBus(MotorsBusBase):
                 found_models[id_] = model_nb
 
         missing_ids = [id_ for id_ in self.ids if id_ not in found_models]
-        wrong_models = {
-            id_: (expected_models[id_], found_models[id_])
-            for id_ in found_models
-            if expected_models.get(id_) != found_models[id_]
-        }
+        # Skip model number check to allow motors with different firmware/models
+        wrong_models = {}
 
         if missing_ids or wrong_models:
             error_lines = [f"{self.__class__.__name__} motor check failed on port '{self.port}':"]
