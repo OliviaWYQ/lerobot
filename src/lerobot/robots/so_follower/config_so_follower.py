@@ -22,11 +22,14 @@ from ..config import RobotConfig
 
 
 @dataclass
-class SOFollowerConfig:
+class SOFollowerConfig(RobotConfig):
     """Base configuration class for SO Follower robots."""
 
+    # Robot id (required for RobotConfig)
+    id: str = "so101"
+
     # Port to connect to the arm
-    port: str
+    port: str = "/dev/ttyACM0"
 
     disable_torque_on_disconnect: bool = True
 
